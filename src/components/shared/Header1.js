@@ -39,8 +39,6 @@ class Header extends React.Component {
           <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <Link className="dropdown-item" to="/ads/new">Create Ads</Link>
             <Link className="dropdown-item" to="/ads/manage">Manage Ads</Link>
-            <Link className="dropdown-item" to="/bookings/manage">Manage Booking</Link>
-
             
            
           </div>
@@ -51,20 +49,13 @@ class Header extends React.Component {
 
   render() {
     const {username, isAuth} = this.props.auth;
-/*
-<Link className='navbar-brand' to='/ads'>Post Your Ads
-            <img src={process.env.PUBLIC_URL + '/img/react-logo.svg'} alt=""/>
-          </Link>
-          
-          <Link className='navbar-brand' to='/ads'><img src={process.env.PUBLIC_URL + '/img/react-logo.svg'} alt=""></img>Post Your Ads
-            
-*/
+
 
     return (
       <nav className='navbar navbar-dark navbar-expand-lg'>
         <div className='container'>
-        <Link className='navbar-brand' to='/ads'><img src={process.env.PUBLIC_URL + '/img/react-logo.svg'} alt=""></img>Post Ads
-            
+          <Link className='navbar-brand' to='/ads'>Post Your Ads
+            <img src={process.env.PUBLIC_URL + '/img/react-logo.svg'} alt=""/>
           </Link>
           <AdSearchInput />
           <button className='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarNavAltMarkup' aria-controls='navbarNavAltMarkup' aria-expanded='false' aria-label='Toggle navigation'>

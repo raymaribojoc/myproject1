@@ -27,7 +27,6 @@ export class AdManage extends React.Component {
       errors => this.setState({errors, isFetching: false}))
   }
 
-  
   renderAdCards(ads) {
     return ads.map((ad, index) =>
      <AdManageCard modal={<AdManageModal bookings={ad.bookings}/>}
@@ -71,47 +70,3 @@ export class AdManage extends React.Component {
     )
   }
 }
-
-
-
-
-/*
-import React from 'react';
-import * as actions from 'actions';
-
-
-export class AdManage extends React.Component {
-
-    constructor() {
-        super();
-
-        this.state = {
-            userAds: [],
-            errors: []
-        }
-    }
-
-    componentWillMount() {
-        actions.getUserAds().then(
-        userAds => this.setState({userAds}),
-        errors => this.setState({errors}))
-    
-    }
-
-    render() {
-        const { userAds } = this.state;
-
-        return (
-            <div>
-                {
-                // display the title of the ads--- amazing    
-            //userAds.map((ad, index) => <p key={index}> {ad.title}</p>)
-
-                }
-            </div>
-        
-        )
-    }
-
-}
-*/

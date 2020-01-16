@@ -1,23 +1,11 @@
-/*import React from 'react';
+import React from 'react';
 import DateRangePicker from 'react-bootstrap-daterangepicker';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { BookingModal } from './BookingModal';
 import { getRangeOfDates } from 'helpers';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Payment from '../payment/Payment';
-
-import * as moment from 'moment';
-import * as actions from 'actions';  */
-
-import React from 'react';
-import DateRangePicker from 'react-bootstrap-daterangepicker';
-import { ToastContainer, toast } from 'react-toastify';
-import { BookingModal } from './BookingModal';
-import { getRangeOfDates } from 'helpers';
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-//import Payment from '../payment/Payment';
 
 import * as moment from 'moment';
 import * as actions from 'actions';
@@ -153,13 +141,11 @@ class Booking extends React.Component {
 
   render() {
     const { ad, auth: { isAuth } } = this.props;
-    const { startAt, endAt, guests } = this.state.proposedBooking;
-    // const { startAt, endAt, guests, paymentToken } = this.state.proposedBooking;
+    const { startAt, endAt, guests, paymentToken } = this.state.proposedBooking;
 
     return (
       <div className='booking'>
-        <ToastContainer />
-        <h3 className='booking-price'>PHP {ad.price} <span className='booking-per-night'>per night</span></h3>
+        <h3 className='booking-price'>$ {ad.dailyRate} <span className='booking-per-night'>per night</span></h3>
         <hr></hr>
         { !isAuth &&
           <Link className='btn btn-bwm btn-confirm btn-block' to={{pathname: '/login'}}>
@@ -202,21 +188,13 @@ class Booking extends React.Component {
                       booking={this.state.proposedBooking}
                       errors={this.state.errors}
                       adPrice={ad.dailyRate}
-                      
-                      /> 
+                      disabled={!paymentToken}
+                      acceptPayment={() => <Payment setPaymentToken={this.setPaymentToken}/>}
+                      />
       </div>
     )
   }
 }
-
-/* 
-
-disabled={!paymentToken}
-                      acceptPayment={() => <Payment setPaymentToken={this.setPaymentToken}/>} 
-                      /> 
-
-
-*/
 
 function mapStateToProps(state) {
   return {

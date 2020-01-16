@@ -1,28 +1,22 @@
-import React from "react";
-import { AdCard } from "./AdCard";
-
-//import * as actions from 'actions';
+import React from 'react';
+import { AdCard } from './AdCard';
 
 export class AdList extends React.Component {
-  
+
   renderAds() {
     return this.props.ads.map((ad, index) => {
       return (
-       <AdCard key={index}
-             colNum='col-md-3 col-xs-6'
-             ad={ad}/>
-          )
+          <AdCard key={index}
+                      colNum='col-md-3 col-xs-6'
+                      ad={ad}/>
+        )
     });
   }
-    render() {
-  
+  render() {
     return (
-        <div className="row">
-            {this.renderAds()}
-        </div>
+      <div className="row">
+        {this.renderAds()}
+      </div>
     )
   }
 }
-
-
-
