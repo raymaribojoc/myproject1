@@ -1,4 +1,3 @@
-
 import axios from 'axios';
 import authService from 'services/auth-service';
 import axiosService from 'services/axios-service';
@@ -14,12 +13,11 @@ import { FETCH_AD_BY_ID_SUCCESS,
          FETCH_USER_BOOKINGS_SUCCESS,
          FETCH_USER_BOOKINGS_FAIL,
          FETCH_USER_BOOKINGS_INIT,
-        // UPDATE_AD_SUCCESS,
-         //UPDATE_AD_FAIL,
-        //RESET_AD_ERRORS,
+         UPDATE_AD_SUCCESS,
+         UPDATE_AD_FAIL,
+         RESET_AD_ERRORS,
          RELOAD_MAP,
-         RELOAD_MAP_FINISH 
-        } from './types';
+         RELOAD_MAP_FINISH } from './types';
 
 const axiosInstance = axiosService.getInstance();
 
@@ -104,30 +102,26 @@ export const createAd = (adData) => {
     err => Promise.reject(err.response.data.errors)
   )
 }
-/*
+
 export const resetAdErrors = () => {
   return {
     type: RESET_AD_ERRORS
   }
 }
-*/
-/*
+
 const updateAdSuccess = (updatedAd) => {
   return {
     type: UPDATE_AD_SUCCESS,
     ad: updatedAd
   }
 }
-*/
-/*
+
 const updateAdFail = (errors) => {
   return {
     type: UPDATE_AD_FAIL,
     errors
   }
 }
-*/
-/*
 
 export const updateAd = (id, adData) => dispatch => {
   return axiosInstance.patch(`/ads/${id}`, adData)
@@ -141,7 +135,7 @@ export const updateAd = (id, adData) => dispatch => {
     })
     .catch(({response}) => dispatch(updateAdFail(response.data.errors)))
 }
-*/
+
 // USER BOOKINGS ACTIONS ---------------------------
 
 const fetchUserBookingsInit = () => {
@@ -282,28 +276,6 @@ export const declinePayment = (payment) => {
     .then(res => res.data)
     .catch(({response}) => Promise.reject(response.data.errors))
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

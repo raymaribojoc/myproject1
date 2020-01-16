@@ -18,9 +18,9 @@ export function BookingModal(props) {
      <p className='dates'>{booking.startAt} / {booking.endAt}</p>
      <div className='modal-body'>
       <em>{booking.days}</em> nights /
-      <em>{adPrice}PHP</em> per Night
+      <em>{adPrice}$</em> per Night
       <p>Guests: <em>{booking.guests}</em></p>
-      <p>Price: <em>{booking.totalPrice}PHP </em></p>
+      <p>Price: <em>{booking.totalPrice}$ </em></p>
 
       {acceptPayment && acceptPayment()}
 

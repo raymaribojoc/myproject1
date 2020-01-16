@@ -30,7 +30,7 @@ class AdSearchInput extends React.Component {
                ref={this.searchInput}
                className='form-control mr-sm-2 bwm-search'
                type='search'
-               placeholder='Try "New York"'
+               placeholder='Try "Stockholm"'
                aria-label='Search'></input>
         <button onClick={() => {this.handleSearch()}}
                 className='btn btn-outline-success my-2 my-sm-0 btn-bwm-search'
